@@ -12,3 +12,7 @@ def divide_into_subtasks(user_prompt: str):
     pattern = r'(\d+)\.\s*([\s\S]+?)(?=\d+\.|$)'
     matches = re.finditer(pattern, response, re.DOTALL)
     return [match.group(2).strip() for match in matches]
+
+
+def solve_simple_task(user_prompt: str, background: str = None):
+    return gpt_response(user_prompt, background)
